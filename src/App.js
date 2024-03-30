@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+
+// import {Provider} from 'react-redux';
+
+import { Outlet } from "react-router";
+import Navbar from "./components/navbar";
+import User from "./modules/user";
+import Auth from "./modules/auth";
+
+
+// import neftlixStore from './redux';
+
+
 
 function App() {
+
+  async function  authenticate (){
+
+  }
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // <Provider store = {neftlixStore}>
+    <>
+
+    {authenticate ? <User/> : <Auth/>}
+      <Auth/>
+      <User/>
+   
+      
+
+    </>
+    // </Provider>
   );
 }
 
